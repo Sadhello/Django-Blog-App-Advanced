@@ -1,0 +1,34 @@
+{% extends 'BlogWeb/layout.html' %}
+{% block home %}
+
+    <article class="media content-section">
+        <img class="rounded-circle article-img " src="{{ object.author.profile.image.url }}">
+        <div class="media-body">
+        <div class="article-metadata">
+            <a class="mr-2" href="#">{{ object.author }}</a>
+            <small class="date">{{ object.date_posted| date:"F d, Y" }}</small>
+        </div>
+        <h2 class="article-title">{{ object.title }}</h2>
+        <p class="article-content">{{ object.content }}</p>
+        {% if object.author == user %}
+                <div class="buttons-del-up">
+                    <button class="custom-button"> 
+                        <a class="button_top" href="{% url 'post-update' object.id %}">Update</a>
+                    </button>
+                    <button> 
+                        <a class="button_top" href="{% url 'post-delete' object.id %}">Delete</a>
+                    </button>
+                    
+                </div>
+        {% endif %}
+        <img src="{{ post.image_field }}">
+        {% if likedpost == True %}
+            <a href="{% url 'like_post' post.id %}">Like</a>
+            <small class="likes"><i class='bx bxs-heart' ></i>{{ post.likes }}</small>
+        {% else %}
+            <small class="likes"><i class='bx bx-heart'></i>{{ post.likes }}</small>
+        {% endif %}
+        </div>
+    </article>
+
+{% endblock %}
