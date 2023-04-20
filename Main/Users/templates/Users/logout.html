@@ -1,0 +1,8 @@
+{% extends 'BlogWeb/layout.html' %}
+{% block register %}
+    <div class="border-top pt-3">
+        <h1>You Have Been Logged Out</h1>
+        <hr>
+        <small>Already Have An Account? <a class="ml-2" href="{% url 'login' %}">Log In</a></small>
+    </div>
+{% endblock %}
