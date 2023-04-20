@@ -1,0 +1,120 @@
+.form-group{
+    border: 5px solid var(--content-section);
+    transition: var(--tran-05);
+    border-radius: 12px;
+    padding: 16px;
+    color: var(--text-color);
+}
+input{
+    position: relative;
+    max-width: 190px;
+    border: none;
+    border-radius: 24px;
+    box-shadow: 0px 3px 0px 0px #858585;
+    padding: .375rem .75rem;
+    transition: all 200ms ease-in-out;
+    opacity: .8;
+    width: 100%
+}
+input::after {
+    content: attr(placeholder);
+    position: absolute;
+    color: #161616;
+    top: 0;
+    left: 0;
+}
+
+label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #858585;
+    margin-bottom: 4px;
+    margin-left: 1px;
+}
+input:focus{
+    border: none;
+    box-shadow: 0px 2px 0px 0px #00ffb0;
+    outline: none;
+}
+fieldset li{
+    padding: 5px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: flex-start;
+}
+fieldset li a, fieldset li a #text{
+    display: none;
+}
+span.help-text ul li{
+    list-style: circle;
+    color: #858585;
+    font-size: .5rem;
+    margin-top: 6px;
+    margin-left: 1px;
+    visibility: hidden;
+    transform: translateY(-.5rem);
+    transition: all 100ms linear;
+    z-index: -1;
+}
+input::-webkit-file-upload-button{
+    display: none;
+    border-radius: 24px;
+}
+input#id_image{
+    background: transparent;
+}
+input#id_image:focus{
+    border: none;
+    outline: none;
+}
+
+textarea{
+    padding: 5px;
+}
+.buttons-del-up{
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.buttons-del-up a{
+    text-decoration: none;
+}
+
+button {
+    /* Variables */
+    --button_radius: 0.75em;
+    --button_color: #e8e8e8;
+    --button_outline_color: #000000;
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    margin: 1px;
+    border: none;
+    border-radius: var(--button_radius);
+    background: var(--button_outline_color);
+}
+
+.button_top {
+    display: block;
+    box-sizing: border-box;
+    border: 2px solid var(--button_outline_color);
+    border-radius: var(--button_radius);
+    padding: 0.75em 1.5em;
+    background: var(--button_color);
+    color: var(--button_outline_color);
+    transform: translateY(-0.2em);
+    transition: transform 0.1s ease;
+}
+
+button:hover .button_top {
+    /* Pull the button upwards when hovered */
+    transform: translateY(-0.33em);
+}
+
+button:active .button_top {
+    /* Push the button downwards when pressed */
+    transform: translateY(0);
+}
